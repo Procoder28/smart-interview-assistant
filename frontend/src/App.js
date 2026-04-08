@@ -6,7 +6,6 @@ import ResultsPage from "./pages/ResultsPage";
 export default function App() {
   const [page, setPage] = useState("upload");
   const [sessionData, setSessionData] = useState(null);   // { session_id, questions }
-  const [resumeText, setResumeText] = useState("");
 
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5f5", fontFamily: "sans-serif" }}>
@@ -23,9 +22,8 @@ export default function App() {
 
         {page === "upload" && (
           <UploadPage
-            onStart={(data, text) => {
+            onStart={(data) => {
               setSessionData(data);
-              setResumeText(text);
               setPage("interview");
             }}
           />

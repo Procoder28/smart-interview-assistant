@@ -215,7 +215,7 @@ export default function InterviewPage({ sessionData, onFinish }) {
             </div>
 
             {feedback.communication_tip && (
-              <div style={{ background: "#e8f5e9", borderRadius: "8px", padding: "12px 16px", marginBottom: "16px", borderLeft: "3px solid #4caf50", borderRadius: "0 8px 8px 0" }}>
+              <div style={{ background: "#e8f5e9", padding: "12px 16px", marginBottom: "16px", borderLeft: "3px solid #4caf50", borderRadius: "0 8px 8px 0" }}>
                 <p style={{ margin: 0, fontSize: "13px", color: "#2e7d32" }}>
                   <strong>Communication tip:</strong> {feedback.communication_tip}
                 </p>
