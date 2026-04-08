@@ -43,3 +43,7 @@ cd frontend
 npm install
 npm start
 \`\`\`
+
+## Render Deployment
+- Set the service root directory to the repository root, or use the root-level Procfile.
+- The backend start command runs from `backend/`, which is handled by the Procfile in the repo root.
