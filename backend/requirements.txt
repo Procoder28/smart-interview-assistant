@@ -7,3 +7,4 @@ psycopg[binary]
 python-dotenv
 pdfplumber
 google-generativeai
+psycopg2-binary
