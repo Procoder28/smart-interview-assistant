@@ -16,7 +16,7 @@ app = FastAPI(title="Smart Interview Assistant")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://smart-interview-assistant-procoder28s-projects.vercel.app/",
+    allow_origins=["https://smart-interview-assistant-procoder28s-projects.vercel.app",
                    "http://localhost:3000"],
     allow_methods=["*"],
     allow_headers=["*"],
