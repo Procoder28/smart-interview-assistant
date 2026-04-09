@@ -3,7 +3,9 @@ import json
 import re
 import os
 
-api_key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY") or "AIzaSyCipnFYBab-Y5pphSB3es7BMDSzYAYmF_4"
+api_key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+if not api_key:
+    raise RuntimeError("Missing API key: set GOOGLE_API_KEY or GEMINI_API_KEY")
 genai.configure(api_key=api_key)  # same key you used in question_generator.py
 
 model = genai.GenerativeModel("gemini-2.5-flash")
