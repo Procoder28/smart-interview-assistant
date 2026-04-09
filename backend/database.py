@@ -1,14 +1,17 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+import os
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./interview.db")
+engine = create_engine(DATABASE_URL)  # remove connect_args for postgres
 
 # This creates a file called interview.db in your backend/ folder
-DATABASE_URL = "sqlite:///./interview.db"
+# DATABASE_URL = "sqlite:///./interview.db"
 
 # The engine is the actual connection to the DB
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}  # needed for SQLite + FastAPI
-)
+# engine = create_engine(
+    # DATABASE_URL,
+    # connect_args={"check_same_thread": False}  # needed for SQLite + FastAPI
+# )
 
 # SessionLocal is a factory — each request gets its own session
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
